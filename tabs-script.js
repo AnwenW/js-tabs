@@ -2,13 +2,10 @@
 const tabs = document.querySelector('.tabs');
 const tabButtons = tabs.querySelectorAll('[role="tab"]');
 
-// const tabPanels = tabs.querySelectorAll('[role="tabpanel"]');
-// instead get tabPanels nodelist as an array:
+// get tabPanels (nodelist) as an array:
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 
 function handleTabClick(event) {
-
-    // ON TAB CLICK:
 
     // hide all tab panels
     tabPanels.forEach(panel => {
@@ -25,22 +22,7 @@ function handleTabClick(event) {
 
     // find the associated tabPanel and show it!
     const id = event.currentTarget.id;
-
-    // METHOD 1
-    // const id = event.currentTarget.id;
-    // const tabPanel = tabs.querySelector(`[aria-labelledby="${id}"]`);
-    // tabPanel.hidden = false;
-
-    // METHOD 2 – find in the array of tabPanels
-
-    // tabPanels.find(panel => {
-    //     if(panel.getAttribute('aria-labelledby') === id) {
-    //         return true;
-    //     }
-    // });
-
     const tabPanel = tabPanels.find(panel => panel.getAttribute('aria-labelledby') === id);
-
     tabPanel.hidden = false;
 }
 
