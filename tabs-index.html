@@ -12,12 +12,33 @@
 <body>
     <div class="wrapper">
 
+        <!--
+            Looks at:
+            Event listeners
+            Loops
+            Accessibility (tabbing through)
+            Hiding/ showing things
+        -->
+
         <div class="tabs">
 
             <div role="tablist" aria-label="Programming Languages">
+
+                <!-- include role and aria labels to make accessible -->
+                <!-- also good for SEO to make hidden tab content easily readable by search engines -->
+
+                <!-- see roles used here: 
+                tablist (also aria-label to let screen readers know what the list's about)
+                tab 
+                tabpanel 
+                -- tab and tabpanel linked by matching id/ aria-labelledby. No functionality, just correct browser markup
+                -->
+
                 <button role="tab" aria-selected="true" id="js">
                     JavaScript
                 </button>
+
+                <!-- aria-selected is how to maintain which tab is currently active -->
 
                 <button role="tab" aria-selected="false" id="ruby">
                     Ruby
